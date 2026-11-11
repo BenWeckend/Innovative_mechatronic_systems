@@ -10,7 +10,7 @@
 
 ### Noch offene Fragen:
 - Sollte man den Drucksensor als eigene Node konzipieren, die mit dem RasPi kommuniziert?
-  > Falls ja: müssen wir benötigen wie entweder einen Nucleo oder Arduino/RasPi + Transiver (z.B. MCP2515-CAN-Bus-Modul)
+  > Falls ja: benötigen wir entweder einen Nucleo oder Arduino/RasPi + Transiver (z.B. MCP2515-CAN-Bus-Modul)
 - Was für Nodes gibt es? Motoren (2x), RasPi, Gyros/IMUs?
 
 
