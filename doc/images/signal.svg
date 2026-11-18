@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1350" height="430" viewBox="0 0 1350 430">
+<rect width="1350" height="430" rx="26" fill="#FFFFFF"/>
+<rect x="118" y="100" width="300" height="231" fill="#F3F6FA"/><rect x="418" y="100" width="520" height="231" fill="#E9F3FA"/><rect x="938" y="100" width="285" height="231" fill="#F3F6FA"/>
+<g stroke="#D6DFE9" stroke-width="2"><path d="M118 147H1225M118 210H1225M118 273H1225" stroke-dasharray="7 8"/></g>
+<path d="M118 85V334H1240" fill="none" stroke="#475C76" stroke-width="4" stroke-linecap="round"/>
+<path d="M119 280C158 275 185 275 214 279S282 270 312 279S382 271 415 277 C453 258 458 181 488 180 C531 175 557 198 588 177 S650 177 688 190 S766 173 804 182 S889 171 928 180 C953 185 963 280 994 280 S1087 274 1120 280 S1185 271 1220 278" fill="none" stroke="#0069b4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<g stroke="#8b7530" stroke-width="3" stroke-dasharray="9 9"><path d="M418 100V330M938 100V330"/></g>
+<g font-family="DejaVu Sans, Arial, sans-serif" text-anchor="middle"><text x="266" y="62" fill="#293E59" font-size="24" font-weight="700">Ohne Objekt</text><text x="680" y="62" fill="#00497f" font-size="24" font-weight="700">Objekt aufgenommen</text><text x="1080" y="62" fill="#293E59" font-size="24" font-weight="700">Objekt abgelegt</text>
+<text x="680" y="385" fill="#66788E" font-size="23">Zeit / Bewegungsphasen →</text></g>
+<text x="49" y="226" transform="rotate(-90 49 226)" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" fill="#66788E" font-size="21">Messsignal (schematisch)</text>
+</svg>
