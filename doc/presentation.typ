@@ -1,4 +1,10 @@
 #import "/TUBAF_typst_template/tubaf_template.typ" as tubaf
+#import "zwicky_box.typ": zwicky_box
+
+
+///////////
+// colors
+///////////
 
 #let uni = tubaf.colors.Uniblau
 #let navy = tubaf.colors.Dunkelblau
@@ -8,6 +14,12 @@
 #let dark = rgb("#253C52")
 #let muted = rgb("#506879")
 #let warm = rgb("#F8F1DE")
+
+
+
+////////////
+// helpers  
+//////////// 
 
 #let card(title, body, bg: white, height: auto) = block(
   width: 100%, height: height, fill: bg,
@@ -50,6 +62,12 @@
   #text(size: 11.8pt, fill: dark)[#detail]
 ]]
 
+
+
+/////////////
+// template  
+/////////////
+
 #show: tubaf.presentation.with(
   title: "Exoskelette: Gewichtssensitive Kraftunterstützung",
   subtitle: "Projektidee: drucksensitive Sohlen als zusätzliche
@@ -60,7 +78,12 @@ Informationsquelle für die Regelung",
 )
 
 
-// Problemstellung
+
+////////////
+// content  
+//////////// 
+
+// Problemstellung 1
 = Was fehlt bisherigen Unterstützungsmodi?
 
 #grid(
@@ -78,7 +101,21 @@ Informationsquelle für die Regelung",
 
 #strip([*Problem:* Die Unterstützungsstärke ist nur schwach mit der tatsächlich auftretenden Belastung gekoppelt.])
 
-// 3 Ziele
+
+// Problemstellung 2
+= Wie soll die Unterstützung reagieren?
+
+#align(center)[#image("images/signal.svg", width: 100%, height: 60mm, fit: "contain")]
+#grid(
+  columns: (1fr, 1fr, 1fr), column-gutter: 8mm,
+  [#mini("Ohne Objekt", [Geringe bzw. keine zusätzliche Lastunterstützung.])],
+  [#mini("Objekt aufgenommen", [Höhere Unterstützung, solange die Zusatzlast anliegt.])],
+  [#mini("Objekt abgestellt", [Kraftunterstützung wird wieder reduziert.])],
+)
+#text(size: 12pt, fill: muted)[Schematischer Signalverlauf: noch keine Messdaten. Dynamische Einflüsse müssen experimentell untersucht werden.]
+
+
+// abgeleitete Ziele
 = Unser Ziel: Hilfe nur dann, wenn sie benötigt wird
 
 #grid(
@@ -96,6 +133,8 @@ Informationsquelle für die Regelung",
 
 #strip([*Leitidee:* Zusätzliche Gewichtsbelastung erfassen und als weitere Eingangsgröße der Regelung verwenden.], bg: warm)
 
+
+// Lösungsansatz
 = Grundidee: Differenz der Sohlenbelastung auswerten
 
 #grid(
@@ -123,6 +162,16 @@ Informationsquelle für die Regelung",
 #v(5mm)
 #text(size: 12.2pt, fill: muted)[Wichtig: Bodenreaktionskraft ist nicht unmittelbar identisch mit dem Gewicht des getragenen Objekts.]
 
+
+// Konzeption 1
+= Morphologischer Kasten
+#{
+  set table(inset: (y: 3mm))
+  zwicky_box()
+}
+
+
+// Konzeption 2
 = Aufbau: drucksensitive Untersohle
 
 #grid(
@@ -153,6 +202,7 @@ Informationsquelle für die Regelung",
 )
 
 
+// Konzeption 3
 = Vom Sensor zur Kraftvorgabe
 
 #grid(
@@ -182,17 +232,8 @@ Informationsquelle für die Regelung",
 )
 #v(5mm)
 
-= Wie soll die Unterstützung reagieren?
 
-#align(center)[#image("images/signal.svg", width: 100%, height: 60mm, fit: "contain")]
-#grid(
-  columns: (1fr, 1fr, 1fr), column-gutter: 8mm,
-  [#mini("Ohne Objekt", [Geringe bzw. keine zusätzliche Lastunterstützung.])],
-  [#mini("Objekt aufgenommen", [Höhere Unterstützung, solange die Zusatzlast anliegt.])],
-  [#mini("Objekt abgestellt", [Kraftunterstützung wird wieder reduziert.])],
-)
-#text(size: 12pt, fill: muted)[Schematischer Signalverlauf: noch keine Messdaten. Dynamische Einflüsse müssen experimentell untersucht werden.]
-
+// Ausblick Entwurf / Umsetzung
 = Nächste Schritte
 #grid(
   columns: (1fr, 1fr, 1fr), column-gutter: 9mm,

@@ -1,4 +1,5 @@
 #import "../TUBAF_typst_template/tubaf_template.typ" as tubaf
+#import "zwicky_box.typ": zwicky_box
 
 #show: tubaf.report.with(
   type: "Belegarbeit",
@@ -59,20 +60,7 @@ Es lässt sich die Vermutung anstellen, dass für dieses Problem noch Verbesseru
 = Konzipieren
 == Lösungsalternativen suchen
 #figure(
-  table(
-    columns: 7,
-    fill: (x,y) => if x == 0 or y == 0 { color.gray.lighten(70%) } else {color.white },
-    align: center + horizon,
-  )[
-    #align(right)[Wirkprinzip]
-    #align(left)[Funktion]
-  ][1][2][3][4][5][6][#table.cell(rowspan: 2)[Sensor\ (Messwert\ aufnehmen)]][#table.cell(rowspan: 2)[Piezoelement]][#table.cell(rowspan: 2)[druckempfindliche Folie als Widerstand]][#table.cell(colspan: 4)[Feder / Gummisohle \ (Hilfsgröße: mechanische Verformung)]][
-    Potentiometer][Induktiver Sensor][Kapazitiver Sensor][DMS][
-  Messwert\ umformen][Spannungsteiler][Viertelbrücke][Halbbrücke][Vollbrücke][][][
-  Messwert\ wandeln][ADC\ separates Bauteil][ADC separater Microcontroller][ADC\ interner Raspberry][][][][
-  Signal\ verarbeiten][reine Linearisierung][maschinelles Lernen][Spektrografische Analyse][][][][
-  Unterstützung umsetzen][Kraftregelung pneumatisches Exoskelett][Umrechnung für nur elektrisches Exoskelett][][][][]
-  ,
+  zwicky_box(),
   caption: "Morphologischer Kasten"
 )
 
