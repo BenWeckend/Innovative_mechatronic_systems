@@ -49,8 +49,8 @@
 
 #let layer(label, color) = block(
   width: 100%, fill: color, radius: 3pt,
-  inset: (x: 13pt, y: 6pt),
-)[#text(size: 12.4pt, weight: "semibold", fill: navy)[#label]]
+  inset: (x: 13pt, y: 6pt), below: 2mm
+)[#text(size: 13pt, weight: "semibold", fill: navy)[#label]]
 
 #let flow-item(n, title, detail, bg: light) = block(
   width: 100%, height: 40mm, fill: bg, radius: 5pt,
@@ -170,24 +170,43 @@ Informationsquelle für die Regelung",
   zwicky_box()
 }
 
+= Morphologischer Kasten
+#{
+  set table(inset: (y: 3mm))
+  
+  show table.cell: it => {
+    if (it.x == 2 and it.y == 1) or (
+        it.x == 1 and it.y == 3) or (
+        it.x == 2 and it.y == 4) or (
+        it.x == 3 and it.y == 5) or (
+        it.x == 2 and it.y == 6) {
+      text(weight: "bold", style: "italic", fill: red.darken(20%))[#it]
+    } else { it }
+  }
+
+  zwicky_box()
+}
+
 
 // Konzeption 2
 = Aufbau: drucksensitive Untersohle
 
 #grid(
-  columns: (1.0fr, 1.03fr), column-gutter: 12mm,
-  [
-    #text(size: 16pt, weight: "bold", fill: navy)[Materialkonzept (von oben nach unten)]
-
-    #layer("Schützende Deckschicht", rgb("#ECF2F6"))
+  columns: (2fr, 3fr), column-gutter: 15mm,
+  align(center)[
+    #text(size: 16pt, weight: "bold", fill: navy)[Materialkonzept\ (von oben nach unten)]
+    #v(1fr)
+    #layer("Starre Trägerschicht", rgb("#ECF2F6"))
     #layer("Kupferfolie · obere Elektrode", rgb("#CDE3F3"))
     #layer("Velostat / Linqstat · drucksensitive Folie", rgb("#A9CEE7"))
     #layer("Kupferfolie · untere Elektrode", rgb("#CDE3F3"))
-    #layer("Träger- / Schutzschicht", rgb("#ECF2F6"))
+    #layer("Schützende Abschlussschicht", rgb("#ECF2F6"))
+    #v(1fr)
     #text(size: 13pt, fill: dark)[*Alternative:* Einzelne FSR-Drucksensoren statt einer großflächigen Folienmatrix.]
+    #v(1cm)
   ],
-  [
-    #align(center)[#image("images/sole.svg", width: 100%, height: 91mm, fit: "contain")]
+  align(center)[
+    #image("images/exo_sole.svg", width: 100%, fit: "contain")
   ],
 )
 
@@ -234,7 +253,7 @@ Informationsquelle für die Regelung",
 
 
 // Ausblick Entwurf / Umsetzung
-= Nächste Schritte
+= Nächste _Schritte_
 #grid(
   columns: (1fr, 1fr, 1fr), column-gutter: 9mm,
   [#card("1 · Sensor prüfen", [
