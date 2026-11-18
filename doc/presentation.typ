@@ -43,20 +43,19 @@
 #let flow-item(n, title, detail, bg: light) = block(
   width: 100%, height: 40mm, fill: bg, radius: 5pt,
   stroke: (paint: edge, thickness: 0.8pt), inset: 11pt,
-)[
-  #text(size: 12pt, weight: "bold", fill: uni)[#n]
-  #v(7pt)
+)[#align(top)[
+  #text(size: 12pt, weight: "bold", fill: uni)[#n] \
   #text(size: 16pt, weight: "bold", fill: navy)[#title]
-  #v(8pt)
+  #v(0pt)
   #text(size: 11.8pt, fill: dark)[#detail]
-]
+]]
 
 #show: tubaf.presentation.with(
   title: "Exoskelette: Gewichtssensitive Kraftunterstützung",
   subtitle: "Projektidee: drucksensitive Sohlen als zusätzliche
 Informationsquelle für die Regelung",
   author: "Martin Werner & Ben Weckend",
-  bottom-text: "Konzeption Innovativer Mechatronischer Systeme · Konzeptvorstellung",
+  bottom-text: [Konzeption Innovativer Mechatronischer Systeme · Konzeptvorstellung\ Ben Weckend & Martin Werner],
   lang: "de",
 )
 
@@ -198,7 +197,7 @@ Informationsquelle für die Regelung",
 #grid(
   columns: (1fr, 1fr, 1fr), column-gutter: 9mm,
   [#card("1 · Sensor prüfen", [
-    Ein Exemplar des Sensor mit Velostat-Folie bauen und teste. 
+    Ein Exemplar des Sensor mit Velostat-Folie bauen und testen. 
   ], height: 50mm)],
   [#card("2 · Sohle integrieren", [
     Messzonen festlegen, Elektronik anbinden und mit bekannten Zusatzlasten kalibrieren.
