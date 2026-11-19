@@ -206,7 +206,7 @@ Informationsquelle für die Regelung",
     #v(1cm)
   ],
   align(center)[
-    #image("images/exo_sole.svg", width: 100%, fit: "contain")
+    #image("images/exo_sole.png", width: 100%)
   ],
 )
 
